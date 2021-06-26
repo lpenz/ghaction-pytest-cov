@@ -1,8 +1,8 @@
 [![marketplace](https://img.shields.io/badge/marketplace-pytest--cov-blue?logo=github)](https://github.com/marketplace/actions/pytest-cov)
-[![CI](https://github.com/lpenz/ghaction-pytest/actions/workflows/ci.yml/badge.svg)](https://github.com/lpenz/ghaction-pytest/actions/workflows/ci.yml)
-[![github](https://img.shields.io/github/v/release/lpenz/ghaction-pytest?include_prereleases&label=release&logo=github)](https://github.com/lpenz/ghaction-pytest/releases)
+[![CI](https://github.com/lpenz/ghaction-pytest-cov/actions/workflows/ci.yml/badge.svg)](https://github.com/lpenz/ghaction-pytest-cov/actions/workflows/ci.yml)
+[![github](https://img.shields.io/github/v/release/lpenz/ghaction-pytest-cov?include_prereleases&label=release&logo=github)](https://github.com/lpenz/ghaction-pytest-cov/releases)
 
-# ghaction-pytest
+# ghaction-pytest-cov
 
 Github action that runs pytest --cov after installing the
 package's test dependencies.
@@ -35,7 +35,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
-      - uses: lpenz/ghaction-pytest@v1
+      - uses: lpenz/ghaction-pytest-cov@v1
 ```
 
 
@@ -57,7 +57,7 @@ jobs:
       - uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.python-version }}
-      - uses: lpenz/ghaction-pytest@v1
+      - uses: lpenz/ghaction-pytest-cov@v1
       - uses: AndreMiras/coveralls-python-action@v20201129
         with:
           parallel: true

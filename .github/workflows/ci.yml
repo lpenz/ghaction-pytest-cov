@@ -12,12 +12,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          path: ghaction-pytest
+          path: ghaction-pytest-cov
       - uses: actions/checkout@v2
         with:
           repository: lpenz/ftpsmartsync
           path: ftpsmartsync
       - uses: actions/setup-python@v2
-      - uses: ./ghaction-pytest
+      - uses: ./ghaction-pytest-cov
         with:
           working-directory: ftpsmartsync
