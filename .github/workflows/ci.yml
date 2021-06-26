@@ -1,0 +1,23 @@
+---
+name: CI
+on: [ push, pull_request ]
+jobs:
+  omnilint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: docker://lpenz/omnilint:v0.2
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          path: ghaction-pytest
+      - uses: actions/checkout@v2
+        with:
+          repository: lpenz/ftpsmartsync
+          path: ftpsmartsync
+      - uses: actions/setup-python@v2
+      - uses: ./ghaction-pytest
+        with:
+          working-directory: ftpsmartsync

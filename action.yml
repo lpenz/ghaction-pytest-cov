@@ -1,0 +1,23 @@
+---
+name: pytest-cov
+description: Run pytest --cov after installing dependencies
+branding:
+  icon: 'percent'
+  color: 'green'
+inputs:
+  working-directory:
+    description: Run pytest in this directory
+    default: .
+runs:
+  using: "composite"
+  steps:
+    - name: install requirements
+      run: |
+        set -e
+        function act { echo "::group::$1"; shift; echo + "$@"; "$@"; echo ::endgroup::; }
+        act "Install pytest" pip install pytest pytest-cov
+        act "Install package test dependencies" pip install -e .[test]
+        act "Run pytest --cov" pytest --cov
+      shell: bash
+      working-directory: ${{ inputs.working-directory }}
+
