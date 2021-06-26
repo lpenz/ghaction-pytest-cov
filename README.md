@@ -1,4 +1,6 @@
+[![marketplace](https://img.shields.io/badge/marketplace-pytest--cov-blue?logo=github)](https://github.com/marketplace/actions/pytest-cov)
 [![CI](https://github.com/lpenz/ghaction-pytest/actions/workflows/ci.yml/badge.svg)](https://github.com/lpenz/ghaction-pytest/actions/workflows/ci.yml)
+[![github](https://img.shields.io/github/v/release/lpenz/ghaction-pytest?include_prereleases&label=release&logo=github)](https://github.com/lpenz/ghaction-pytest/releases)
 
 # ghaction-pytest
 
